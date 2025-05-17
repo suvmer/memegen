@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { useState } from 'react';
 
-import { Button, Select, Card, ThemeProvider } from '@gravity-ui/uikit';
+import { Button, Select, Switch, Card, ThemeProvider } from '@gravity-ui/uikit';
 
 const texts = [
   "Когда интернет снова не работает",
@@ -37,7 +37,7 @@ function getMeme(image, text = null, options = {}, index) {
       type='action'
       {...options}
     >
-      <img src={`http://localhost:3000/images/${imageIndex}.jpg`}/>
+      <img className='memeImage' src={`http://localhost:3000/images/${imageIndex}.jpg`}/>
       <p className='memeText'>{text === null ? '' : texts[text % texts.length]}</p>
     </Card>
   )
@@ -46,7 +46,7 @@ function getMeme(image, text = null, options = {}, index) {
 function App() {
   const [memes, setMemes] = useState([]);
   const [form, setForm] = useState({ text: 0, image: 0 });
-  const [theme, setTheme] = useState('dark');
+  const [isDarkTheme, setDarkTheme] = useState(true);
 
   function handleChange(key, value) {
     setForm(f => ({ ...f, [key]: value }))
@@ -65,8 +65,8 @@ function App() {
   }
 
   return (
-    <ThemeProvider theme={ theme }>
-      <main className='main'>
+    <ThemeProvider theme={ isDarkTheme ? 'dark' : 'light' }>
+      <main className={'main' + (!isDarkTheme ? ' main_light' : '')}>
         <div className="cardsList">
           { images.concat(images).map((image, index) => getMemeTextChoice(index)) }
         </div>
@@ -95,9 +95,10 @@ function App() {
           <Button width='max' size='xl' view="action" onClick={addMeme}>
             Сохранить
           </Button>
+          <Switch size='l' content="Тёмная тема" checked={ isDarkTheme } onChange={ () => setDarkTheme(!isDarkTheme)}/>
         </div>
         {memes.length !== 0 && (
-          <div className='cardsList'>
+          <div className='cardsList'>isDarkTheme
             <h1>Коллекция</h1>
             { memes.map((meme, index) => (
               getMeme(meme.image, meme.text)

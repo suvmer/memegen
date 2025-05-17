@@ -16,7 +16,11 @@ body {
   background-color: rgba(34, 29, 34, 0.95);
 }
 
-img {
+.main_light {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.memeImage {
   height: 300px;
   width: 300px;
 }
@@ -66,9 +70,16 @@ img {
   bottom: 10px;
   left: 0;
   right: 0;
+  color: white;
   text-align: center;
   text-shadow: 2px 2px 4px #000;
   font-weight: bold;
+}
+
+html, body, .main, [data-theme] {
+  transition:
+    background-color 0.1s,
+    color 0.1s;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
