@@ -37,7 +37,7 @@ function getMeme(image, text = null, options = {}, index) {
       type='action'
       {...options}
     >
-      <img className='memeImage' src={`http://localhost:3000/images/${imageIndex}.jpg`}/>
+      <img className='memeImage' src={`/memegen/images/${imageIndex}.jpg`}/>
       <p className='memeText'>{text === null ? '' : texts[text % texts.length]}</p>
     </Card>
   )
@@ -98,7 +98,7 @@ function App() {
           <Switch size='l' content="Тёмная тема" checked={ isDarkTheme } onChange={ () => setDarkTheme(!isDarkTheme)}/>
         </div>
         {memes.length !== 0 && (
-          <div className='cardsList'>isDarkTheme
+          <div className='cardsList'>
             <h1>Коллекция</h1>
             { memes.map((meme, index) => (
               getMeme(meme.image, meme.text)
