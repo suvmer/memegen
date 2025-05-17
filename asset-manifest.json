@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/memegen/static/css/main.fc097727.css",
-    "main.js": "/memegen/static/js/main.6102ee38.js",
+    "main.css": "/memegen/static/css/main.19006454.css",
+    "main.js": "/memegen/static/js/main.60fa5f12.js",
     "static/media/poster.jpg": "/memegen/static/media/poster.7f0a06b3590784c20282.jpg",
     "index.html": "/memegen/index.html",
-    "main.fc097727.css.map": "/memegen/static/css/main.fc097727.css.map",
-    "main.6102ee38.js.map": "/memegen/static/js/main.6102ee38.js.map"
+    "main.19006454.css.map": "/memegen/static/css/main.19006454.css.map",
+    "main.60fa5f12.js.map": "/memegen/static/js/main.60fa5f12.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc097727.css",
-    "static/js/main.6102ee38.js"
+    "static/css/main.19006454.css",
+    "static/js/main.60fa5f12.js"
   ]
 }
